@@ -1,7 +1,12 @@
 export DEFAULT_USER=ckr
 #export EDITOR='vim'
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+#Add brew to the path
+[ -f /opt/homebrew/bin/brew ] &&  eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
+
+#Add zplug to the path
+export ZPLUG_HOME="$HOMEBREW_PREFIX/opt/zplug"
 # Load zplug init
 [ -d $ZPLUG_HOME ] && source $ZPLUG_HOME/init.zsh
 
@@ -47,6 +52,8 @@ fi
 zplug "rupa/z", use:z.sh
 
 zplug "zsh-users/zsh-syntax-highlighting"
+
+zplug "zsh-users/zsh-completions", depth:2
 
 zplug "zsh-users/zsh-history-substring-search"
 # rebind keys to use zsh-history-substring-search
@@ -103,8 +110,4 @@ fi
 # source plugins and add commands to the PATH
 zplug load
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

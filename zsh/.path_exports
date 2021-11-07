@@ -7,15 +7,18 @@ PATH="/usr/local/sbin:$PATH"
 PATH="/usr/local/bin:$PATH"
 
 # global composer bin
-PATH="~/.composer/vendor/bin:$PATH"
+PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # personal bin folder
-PATH="~/bin:$PATH"
+PATH="$HOME/bin:$PATH"
 
 # local git bin path
 #PATH="/usr/local/git/bin:$PATH"
 
 #  metasploit path
 PATH="/opt/metasploit-framework/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH
