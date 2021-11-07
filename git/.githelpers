@@ -51,6 +51,14 @@ ANSI_WHITE_BOLD='\033[0;37;1m'
 ANSI_RESET='\033[0m'
 
 
+rename_branch() {
+    git branch -m $1 $2
+    git fetch origin
+    git branch -u origin/$2 $2
+    git remote set-head origin -a
+    git remote prune origin
+}
+
 show_git_head() {
     pretty_git_log -1
     git show -p --pretty="tformat:"

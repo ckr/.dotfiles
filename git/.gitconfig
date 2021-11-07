@@ -67,6 +67,8 @@
     revision = describe --tags --always HEAD
     vc = verify-commit
     vch = verify-commit HEAD
+    br = "!. ~/.githelpers && rename_branch"
+    rso = remote set-url origin
 
     # Divergence (commits we added and commits remote added)
     div = "!. git-divergence"
