@@ -5,8 +5,8 @@ alias ls='ls -G'
 alias ll='ls -lG'
 
 #common stuff
-alias vi="vim -X"
-alias vim="vim -X"
+alias vi="nvim"
+alias vim="nvim"
 alias ll="ls -al"
 alias du="du -kh"
 alias ..="cd ..;"
@@ -16,6 +16,7 @@ alias traceroute="traceroute -I"
 alias who="who -HT"
 alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
+alias cat="bat"
 
 # cluster ssh alias
 alias cssh="tmux-cssh"
@@ -28,3 +29,20 @@ alias dc="docker compose"
 alias dockerPsClean="docker ps -a --format 'table {{.Names}} {{.Status}}' | grep -iv 'Names' | grep 'Exited' | awk '{print $1}' | xargs docker rm"
 alias dockerUpdateAll="docker images --format 'table {{.Repository}} {{.Tag}}' | awk '{print \$1 \":\" \$2}' | grep -iv 'repository' | xargs -L1 docker pull"
 alias dockerRemoveDangling="docker images -f 'dangling=true' -q | awk '{print $1}' | xargs -L1 docker rmi"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias finder-show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias finder-hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias desktop-hide="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias desktop-show="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Kubectl aliases
+alias k='kubectl'
+alias kn='kubectl config set-context $(kubectl config current-context) --namespace '
+alias kexec='kubectl run -it --rm --restart=Never --image ubuntu:latest $USER-hacking -- /bin/bash'
+alias kgpa='kubectl get pods --all-namespaces'
