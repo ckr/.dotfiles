@@ -61,3 +61,8 @@ x() {
          echo "'$1' is not a valid file"
      fi
 }
+
+# Expose EMOJI var set in spaceship conf to iterm as user.EMOJI
+iterm2_print_user_vars() {
+	iterm2_set_user_var EMOJI $EMOJI
+}
