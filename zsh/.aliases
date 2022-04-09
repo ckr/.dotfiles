@@ -18,6 +18,9 @@ alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
 alias cat="bat"
 
+#ssh via cloudflare access
+alias ssh-cfa="cloudflared access ssh --hostname"
+
 # cluster ssh alias
 alias cssh="tmux-cssh"
 
