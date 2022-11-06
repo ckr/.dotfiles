@@ -17,6 +17,7 @@ alias who="who -HT"
 alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
 alias cat="bat"
+alias sslscan-simple='sslscan --no-cipher-details --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation'
 
 #ssh via cloudflare access
 alias ssh-cfa="cloudflared access ssh --hostname"
@@ -49,3 +50,6 @@ alias k='kubectl'
 alias kn='kubectl config set-context $(kubectl config current-context) --namespace '
 alias kexec='kubectl run -it --rm --restart=Never --image ubuntu:latest $USER-hacking -- /bin/bash'
 alias kgpa='kubectl get pods --all-namespaces'
+
+# AWS Aliases
+alias aws-whoami='aws sts get-caller-identity'

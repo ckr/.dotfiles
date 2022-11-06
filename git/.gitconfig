@@ -69,6 +69,7 @@
     vch = verify-commit HEAD
     br = "!. ~/.githelpers && rename_branch"
     rso = remote set-url origin
+    pt = push --tags
 
     # Divergence (commits we added and commits remote added)
     div = "!. git-divergence"
