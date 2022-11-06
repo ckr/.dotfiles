@@ -37,9 +37,9 @@ setopt HIST_IGNORE_SPACE
 
 #zplug plugins and themes
 
-zplug "mafredri/zsh-async", from:github
+zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 zplug "zsh-users/zsh-autosuggestions", defer:2
 if zplug check "zsh-users/zsh-autosuggestions"; then
