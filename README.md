@@ -8,7 +8,12 @@ Pull the repository, and then create the symbolic links [using GNU
 stow](https://www.gnu.org/software/stow/).
 
 ```shell
-$ git clone git@github.com:ckr/.dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ stow zsh git # plus whatever else you'd like
+git clone git@github.com:ckr/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+stow zsh git # plus whatever else you'd like
+```
+
+You can install `stow` using `brew`
+```shell
+brew install stow
 ```
