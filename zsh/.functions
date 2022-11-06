@@ -27,6 +27,17 @@ have() {
 	type "$1" &> /dev/null;
 }
 
+# Git config replace domain with alias
+greplace() {
+    local repo="$1"
+    shift
+    case $repo in
+        gh) sed -i '' 's/git@github.com/gh/g' .git/config $@ ;;
+        *) echo "Subcommand $repo not found" ;;
+    esac
+}
+
+
 # Show top 10 used commands in history
 top10() {
 	history | awk '{a[$4]++ } END{for(i in a){print a[i] " " i}}'|sort -rn |head -n 10
@@ -64,5 +75,5 @@ x() {
 
 # Expose EMOJI var set in spaceship conf to iterm as user.EMOJI
 iterm2_print_user_vars() {
-	iterm2_set_user_var EMOJI $EMOJI
+	iterm2_set_user_var emojiBadge $EMOJI_BADGE
 }
