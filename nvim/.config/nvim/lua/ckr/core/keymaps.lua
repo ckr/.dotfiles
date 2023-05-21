@@ -42,9 +42,15 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+local tsbuiltin = require('telescope.builtin')
+-- Lists files in your current working directory, respects .gitignore
+keymap.set('n', '<leader>ff', tsbuiltin.find_files, {})
+-- Fuzzy search through the output of git ls-files command, respects .gitignore
+keymap.set('n', '<leader>fg', tsbuiltin.git_files, {})
+-- Search for a string in your current working directory and get results live as you type, respects .gitignore. (Requires ripgrep)
+keymap.set('n', '<leader>fs', tsbuiltin.live_grep, {})
+-- Searches for the string under your cursor or selection in your current working directory
+keymap.set('n', '<leader>fc', tsbuiltin.grep_string, {})
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
