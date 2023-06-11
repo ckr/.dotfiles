@@ -10,7 +10,7 @@ PATH="/usr/local/bin:$PATH"
 PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # personal bin folder
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/.bin:$PATH"
 
 # local git bin path
 #PATH="/usr/local/git/bin:$PATH"
