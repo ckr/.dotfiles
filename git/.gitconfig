@@ -45,7 +45,7 @@
     pushInsteadOf = "gh:"
 [alias]
     info = remote -v
-    cb = clone --bare
+    cb = "! git-clone-bare-for-worktrees.sh"
     w = worktree
     ls = ls-files
     st = status
@@ -70,6 +70,8 @@
     br = "!. ~/.githelpers && rename_branch"
     rso = remote set-url origin
     pt = push --tags
+    bs = "! git-branch-status"
+    bsr = "! git-branch-status -r"
 
     # Divergence (commits we added and commits remote added)
     div = "!. git-divergence"
