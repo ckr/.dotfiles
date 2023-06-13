@@ -69,6 +69,7 @@
     vch = verify-commit HEAD
     br = "!. ~/.githelpers && rename_branch"
     rso = remote set-url origin
+    show-files = show --pretty="" --name-only
     pt = push --tags
     bs = "! git-branch-status"
     bsr = "! git-branch-status -r"
