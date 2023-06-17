@@ -1,101 +1,103 @@
 [user]
-    name = Constantinos Kouloumbris
-    email = c@kouloumbris.com
-    signingkey = A71BC59B4628E857
-    username = ckr
+  name = Constantinos Kouloumbris
+  email = c@kouloumbris.com
+  signingkey = A71BC59B4628E857
+  username = ckr
 [github]
-    user = ckr
+  user = ckr
 [commit]
-	gpgSign = true
+  gpgSign = true
 [core]
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    autocrlf = input
-    excludesfile = ~/.gitignore_global
-    editor = vim
-    pager = diff-so-fancy | less --tabs=4 -RFX
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [interactive]
-    diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
 [color]
-    ui = auto
+  ui = auto
 [push]
-    default = matching
+  default = matching
+  autoSetupRemote = true
 [branch]
-    autosetuprebase = always
+  autosetuprebase = always
 [credential]
-  	helper = osxkeychain
+  helper = osxkeychain
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 [mergetool]
-    prompt = true
+  prompt = true
 [mergetool "vimdiff"]
-    cmd = vim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = vim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool]
-    prompt = false
+  prompt = false
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [url "git@github.com:"]
-    insteadOf = "gh:"
-    pushInsteadOf = "gh:"
+  insteadOf = "gh:"
+  pushInsteadOf = "gh:"
 [alias]
-    info = remote -v
-    cb = "! git-clone-bare-for-worktrees.sh"
-    w = worktree
-    ls = ls-files
-    st = status
-    ci = commit --verbose
-    co = checkout
-    di = diff
-    dc = diff --cached
-    amend = commit --amend
-    aa = add --all
-    ff = merge --ff-only
-    pullff = pull --ff-only
-    noff = merge --no-ff
-    fa = fetch --all
-    pom = push origin main
-    pod = push origin develop
-    b = branch
-    ds = diff --stat=160,120
-    dh1 = diff HEAD~1
-    revision = describe --tags --always HEAD
-    vc = verify-commit
-    vch = verify-commit HEAD
-    br = "!. ~/.githelpers && rename_branch"
-    rso = remote set-url origin
-    show-files = show --pretty="" --name-only
-    pt = push --tags
-    bs = "! git-branch-status"
-    bsr = "! git-branch-status -r"
+  info = remote -v
+  cb = "! git-clone-bare-for-worktrees.sh"
+  w = worktree
+  ls = ls-files
+  st = status
+  ci = commit --verbose
+  co = checkout
+  di = diff
+  dc = diff --cached
+  amend = commit --amend
+  aa = add --all
+  ff = merge --ff-only
+  pullff = pull --ff-only
+  noff = merge --no-ff
+  fa = fetch --all
+  pom = push origin main
+  pod = push origin develop
+  b = branch
+  ds = diff --stat=160,120
+  dh1 = diff HEAD~1
+  revision = describe --tags --always HEAD
+  vc = verify-commit
+  vch = verify-commit HEAD
+  br = "!. ~/.githelpers && rename_branch"
+  rso = remote set-url origin
+  show-files = show --pretty="" --name-only
+  pt = push --tags
+  bs = "! git-branch-status"
+  bsr = "! git-branch-status -r"
+  bsa = "! git-branch-status -a"
 
     # Divergence (commits we added and commits remote added)
-    div = "!. git-divergence"
+  div = "!. git-divergence"
 
     # Goodness (summary of diff lines added/removed/total)
-    gn = "! git-goodness"
-    gnc = "! git-goodness --cached"
+  gn = "! git-goodness"
+  gnc = "! git-goodness --cached"
 
     # What the hell just happened and who has done it scripts
-    what-the-hell-just-happened = "! git-what-the-hell-just-happened"
-    whodoneit = "! git-whodoneit"
+  what-the-hell-just-happened = "! git-what-the-hell-just-happened"
+  whodoneit = "! git-whodoneit"
 
     # Fancy logging.
-    head = !git r -1
+  head = !git r -1
     # h = head
-    h = !git head
+  h = !git head
     # hp = head with patch
-    hp = "!. ~/.githelpers && show_git_head"
+  hp = "!. ~/.githelpers && show_git_head"
     # r = recent commits, only current branch
-    r = !GIT_NO_PAGER=1 git l -30
+  r = !GIT_NO_PAGER=1 git l -30
     # ra = recent commits, all reachable refs
-    ra = !git r --all
+  ra = !git r --all
     # l = all commits, only current branch
-    l = "!. ~/.githelpers && pretty_git_log"
+  l = "!. ~/.githelpers && pretty_git_log"
     # la = all commits, all reachable refs
-    la = !git l --all
+  la = !git l --all
