@@ -48,6 +48,9 @@
   info = remote -v
   cb = "! git-clone-bare-for-worktrees.sh"
   w = worktree
+  wa = "!. ~/.githelpers && worktree_add"
+  wl = worktree list
+  wr = worktree remove
   ls = ls-files
   st = status
   ci = commit --verbose

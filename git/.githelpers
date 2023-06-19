@@ -90,3 +90,23 @@ export_git_log() {
         # column -s '}' -t |
         cat
 }
+
+export_git_log_audit() {
+    echo '"Commit","When","Who","Message"'
+    git log --pretty="tformat:${CSV_EXPORT_FORMAT}" $* |
+        cat
+}
+
+export_git_log_audit_no_merges() {
+    echo '"Commit","When","Who","Message"'
+    git log --pretty="tformat:${CSV_EXPORT_FORMAT}" --first-parent master --no-merges $* |
+        cat
+    
+}
+
+worktree_add() {
+    branch=$1
+    git worktree add $branch
+    cd $branch
+    git branch --set-upstream-to=origin/$branch $branch
+}
