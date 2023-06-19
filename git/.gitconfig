@@ -75,6 +75,7 @@
   bs = "! git-branch-status"
   bsr = "! git-branch-status -r"
   bsa = "! git-branch-status -a"
+  leaks = "! gitleaks detect -f sarif -s . -v --no-git --redact"
 
     # Divergence (commits we added and commits remote added)
   div = "!. git-divergence"
