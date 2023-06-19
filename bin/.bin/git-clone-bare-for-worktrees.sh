@@ -36,4 +36,4 @@ git fetch origin
 # Get default branch and add a worktree with it
 defaultBranch=`git branch 2>/dev/null | grep -e '^*' | tr -d '\* '`
 git worktree add $defaultBranch
-git brnach --set-upstream-to=origin/$defaultBranch $defaultBranch
+git branch --set-upstream-to=origin/$defaultBranch $defaultBranch
