@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env osascript
 
-RUN=$(osascript <<EOF
 try
 	tell application "Plex Media Server"
 		quit
@@ -10,6 +9,3 @@ try
 on error errorMessage number errorNumber
 	log ("errorMessage: " & errorMessage & ", errorNumber: " & errorNumber)
 end try
-EOF)
-
-echo $RUN
