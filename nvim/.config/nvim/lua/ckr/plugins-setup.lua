@@ -35,7 +35,7 @@ return packer.startup(function(use)
 
   -- preferred colorscheme
   -- use("bluz71/vim-nightfly-guicolors")
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -94,13 +94,7 @@ return packer.startup(function(use)
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   -- treesitter configuration
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
-  })
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
