@@ -1,21 +1,3 @@
--- require("ckr.plugins-setup")
--- require("ckr.core.options")
--- require("ckr.core.keymaps")
--- require("ckr.core.colorscheme")
--- require("ckr.core.catppuccin")
--- require("ckr.plugins_old.comment")
--- require("ckr.plugins_old.nvim-tree")
--- require("ckr.plugins_old.lualine")
--- require("ckr.plugins_old.telescope")
--- require("ckr.plugins_old.nvim-cmp")
--- require("ckr.plugins_old.lsp.mason")
--- require("ckr.plugins_old.lsp.lspsaga")
--- require("ckr.plugins_old.lsp.lspconfig")
--- require("ckr.plugins_old.lsp.null-ls")
--- require("ckr.plugins_old.autopairs")
--- require("ckr.plugins_old.treesitter")
--- require("ckr.plugins_old.gitsigns")
-
 -- auto install lazy if not installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
