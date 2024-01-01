@@ -9,6 +9,9 @@ return {
     },
   },
 
+  -- vim visual multi edit
+  { 'mg979/vim-visual-multi', lazy = false },
+
   -- essential plugins
   'tpope/vim-surround', -- add, delete, change surroundings (it's awesome)
   'inkarkat/vim-ReplaceWithRegister', -- replace with register contents using motion (gr + motion)
