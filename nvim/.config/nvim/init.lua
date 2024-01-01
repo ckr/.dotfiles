@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 local opt = vim.opt -- for conciseness
 local keymap = vim.keymap -- for conciseness
