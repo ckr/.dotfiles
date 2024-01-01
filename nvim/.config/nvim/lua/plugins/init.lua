@@ -33,7 +33,11 @@ return {
   { 'rafamadriz/friendly-snippets', lazy = false }, -- useful snippets
 
   -- auto closing
-  'windwp/nvim-autopairs', -- autoclose parens, brackets, quotes, etc...
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
 
   -- git integration
   'lewis6991/gitsigns.nvim', -- show line modifications on left hand side
