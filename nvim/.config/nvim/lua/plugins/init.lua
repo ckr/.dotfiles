@@ -23,14 +23,14 @@ return {
   'nvim-tree/nvim-web-devicons',
 
   -- autocompletion
-  'hrsh7th/nvim-cmp', -- completion plugin
-  'hrsh7th/cmp-buffer', -- source for text in buffer
-  'hrsh7th/cmp-path', -- source for file system paths
+  { 'hrsh7th/nvim-cmp', lazy = false }, -- completion plugin
+  { 'hrsh7th/cmp-buffer', lazy = false },-- source for text in buffer
+  { 'hrsh7th/cmp-path', lazy = false, },-- source for file system paths
 
   -- snippets
-  'L3MON4D3/LuaSnip', -- snippet engine
-  'saadparwaiz1/cmp_luasnip', -- for autocompletion
-  'rafamadriz/friendly-snippets', -- useful snippets
+  { 'L3MON4D3/LuaSnip', lazy = false }, -- snippet engine
+  { 'saadparwaiz1/cmp_luasnip', lazy = false }, -- for autocompletion
+  { 'rafamadriz/friendly-snippets', lazy = false }, -- useful snippets
 
   -- auto closing
   'windwp/nvim-autopairs', -- autoclose parens, brackets, quotes, etc...
