@@ -45,6 +45,9 @@ return {
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      { '<leader>cf', '<cmd>:bd<cr>:Alpha<cr>', desc = 'Close buffer and open alpha dash' }
+    },
     config = function ()
       -- require'alpha'.setup(require'alpha.themes.dashboard'.config)
       require'alpha'.setup(require'alpha.themes.startify'.config)
