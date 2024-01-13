@@ -14,6 +14,25 @@ return {
         build = "make"
       },
       'BurntSushi/ripgrep',
+      {
+        "theprimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+          local setup, harpoon = pcall(require, "harpoon")
+          if not setup then
+            return
+          end
+          harpoon.setup({})
+        end,
+        keys = {
+          { "<leader>ha", function() require("harpoon"):list():append() end, desc = "harpoon add file", },
+          { "<leader>hr", function() require("harpoon"):list():remove() end, desc = "harpoon remove file", },
+          -- { "<leader>hm", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
+          { "<leader>hn", function() require("harpoon"):list():next() end, desc = "harpoon next", },
+          { "<leader>hp", function() require("harpoon"):list():prev() end, desc = "harpoon prev", },
+        },
+      },
     },
     keys = {
       { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Lists files in your current working directory, respects .gitignore' },
@@ -26,6 +45,7 @@ return {
       { '<leader>gfc', '<cmd>Telescope git_bcommits<cr>', desc = 'list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]' },
       { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = 'list git branches (use <cr> to checkout) ["gb" for git branch]' },
       { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'list current changes per file with diff preview ["gs" for git status]' },
+      { '<leader>hm', '<cmd>Telescope harpoon marks<cr>', desc = 'Harpoon [M]arks' },
     },
     config = function()
       -- import telescope plugin safely
@@ -60,6 +80,7 @@ return {
       })
 
       telescope.load_extension("fzf")
+      telescope.load_extension('harpoon')
     end,
   },
 }
