@@ -53,4 +53,12 @@ return {
       require'alpha'.setup(require'alpha.themes.startify'.config)
     end
   },
+  -- commenting plugin
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+        -- add any options here
+    },
+    lazy = false,
+  }
 }
