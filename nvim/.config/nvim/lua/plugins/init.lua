@@ -57,7 +57,7 @@ return {
   {
     'numToStr/Comment.nvim',
     opts = {
-        -- add any options here
+      -- add any options here
     },
     lazy = false,
   },
@@ -79,5 +79,24 @@ return {
     -- keys = {
     --   { [[<C-\>]], '<cmd>ToggleTerm direction=float<cr>' },
     -- }
+  },
+  {
+    "NeogitOrg/neogit",
+    lazy = false,
+    keys = {
+      { '<leader>gi', '<cmd>Neogit kind=auto<cr>', desc = 'Open neogit in a vertical split' },
+    },
+    opts = {
+      signs = {
+        item = { '', '' },
+        section = { '', '' }
+      }
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true
   }
 }
