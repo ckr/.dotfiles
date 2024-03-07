@@ -9,6 +9,27 @@ return {
       require("catppuccin").setup({
         -- latte, frappe, macchiato, mocha
         flavour = "mocha",
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          dashboard = true,
+          harpoon = true,
+          illuminate = true,
+          indent_blankline = {
+            enabled = false,
+            scope_color = "sapphire",
+            colored_indent_levels = false,
+          },
+          mason = true,
+          native_lsp = { enabled = true },
+          notify = true,
+          neotree = true,
+          noice = true,
+          symbols_outline = true,
+          telescope = true,
+          treesitter = true,
+          treesitter_context = true,
+        },
       })
     end,
     init = function()
