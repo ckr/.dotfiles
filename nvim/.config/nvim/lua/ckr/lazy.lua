@@ -33,13 +33,13 @@ require("lazy").setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
     opts = {
-      signs = {
-        add = { text = "+" },
-        change = { text = "~" },
-        delete = { text = "_" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-      },
+      -- signs = {
+      --   add = { text = "+" },
+      --   change = { text = "~" },
+      --   delete = { text = "_" },
+      --   topdelete = { text = "‾" },
+      --   changedelete = { text = "~" },
+      -- },
     },
   },
 
@@ -119,11 +119,42 @@ require("lazy").setup({
           harpoon.setup({})
         end,
         keys = {
-          { "<leader>ha", function() require("harpoon"):list():append() end, desc = "harpoon add file", },
-          { "<leader>hr", function() require("harpoon"):list():remove() end, desc = "harpoon remove file", },
-          { "<leader>hl", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon list files", },
-          { "<leader>hn", function() require("harpoon"):list():next() end, desc = "harpoon next", },
-          { "<leader>hp", function() require("harpoon"):list():prev() end, desc = "harpoon prev", },
+          {
+            "<leader>ha",
+            function()
+              require("harpoon"):list():append()
+            end,
+            desc = "harpoon add file",
+          },
+          {
+            "<leader>hr",
+            function()
+              require("harpoon"):list():remove()
+            end,
+            desc = "harpoon remove file",
+          },
+          {
+            "<leader>hl",
+            function()
+              local harpoon = require("harpoon")
+              harpoon.ui:toggle_quick_menu(harpoon:list())
+            end,
+            desc = "harpoon list files",
+          },
+          {
+            "<leader>hn",
+            function()
+              require("harpoon"):list():next()
+            end,
+            desc = "harpoon next",
+          },
+          {
+            "<leader>hp",
+            function()
+              require("harpoon"):list():prev()
+            end,
+            desc = "harpoon prev",
+          },
         },
       },
     },
@@ -464,6 +495,8 @@ require("lazy").setup({
       --  into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
 
       -- If you want to add a bunch of pre-configured snippets,
       --    you can use this plugin to help you. It even has snippets
