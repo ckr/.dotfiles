@@ -19,6 +19,46 @@ return {
       vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
       vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
+      local renderer = require("neo-tree.ui.renderer")
+
+      -- Expand a node and load filesystem info if needed.
+      local function open_dir(state, dir_node)
+        local fs = require("neo-tree.sources.filesystem")
+        fs.toggle_directory(state, dir_node, nil, true, false)
+      end
+
+      -- Expand a node and all its children, optionally stopping at max_depth.
+      local function recursive_open(state, node, max_depth)
+        local max_depth_reached = 1
+        local stack = { node }
+        while next(stack) ~= nil do
+          node = table.remove(stack)
+          if node.type == "directory" and not node:is_expanded() then
+            open_dir(state, node)
+          end
+
+          local depth = node:get_depth()
+          max_depth_reached = math.max(depth, max_depth_reached)
+
+          if not max_depth or depth < max_depth - 1 then
+            local children = state.tree:get_nodes(node:get_id())
+            for _, v in ipairs(children) do
+              table.insert(stack, v)
+            end
+          end
+        end
+
+        return max_depth_reached
+      end
+
+      --- Recursively open the current folder and all folders it contains.
+      local function neotree_zO(state)
+        local node = state.tree:get_node()
+
+        recursive_open(state, node)
+        renderer.redraw(state)
+      end
+
       require("neo-tree").setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
@@ -140,8 +180,9 @@ return {
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
-            ["z"] = "close_all_nodes",
-            --["Z"] = "expand_all_nodes",
+            ["Z"] = "close_all_nodes",
+            -- ["Z"] = "expand_all_nodes",
+            ["z"] = neotree_zO,
             ["a"] = {
               "add",
               -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
