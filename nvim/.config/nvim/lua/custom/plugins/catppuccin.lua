@@ -24,7 +24,7 @@ return {
           native_lsp = { enabled = true },
           notify = true,
           neotree = true,
-          noice = true,
+          noice = false,
           symbols_outline = true,
           telescope = true,
           treesitter = true,
