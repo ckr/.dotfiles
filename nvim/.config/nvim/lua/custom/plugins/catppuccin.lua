@@ -9,6 +9,26 @@ return {
       require("catppuccin").setup({
         -- latte, frappe, macchiato, mocha
         flavour = "mocha",
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true,
+        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
+          conditionals = {},
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+          -- miscs = {}, -- Uncomment to turn off hard-coded styles
+        },
         integrations = {
           cmp = true,
           gitsigns = true,
@@ -34,7 +54,7 @@ return {
     end,
     init = function()
       vim.cmd.colorscheme("catppuccin")
-      vim.cmd("hi DashboardFooter guifg=bg guibg=fg")
+      -- vim.cmd("hi DashboardFooter guifg=bg guibg=fg")
     end,
   },
 }
