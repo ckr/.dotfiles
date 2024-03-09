@@ -59,6 +59,52 @@ return {
         renderer.redraw(state)
       end
 
+      -- The nodes inside the root folder are depth 2.
+      local MIN_DEPTH = 2
+
+      --- Close the node and its parents, optionally stopping at max_depth.
+      local function recursive_close(state, node, max_depth)
+        if max_depth == nil or max_depth <= MIN_DEPTH then
+          max_depth = MIN_DEPTH
+        end
+
+        local last = node
+        while node and node:get_depth() >= max_depth do
+          if node:has_children() and node:is_expanded() then
+            node:collapse()
+          end
+          last = node
+          node = state.tree:get_node(node:get_parent_id())
+        end
+
+        return last
+      end
+
+      --- Close a folder, or a number of folders equal to count.
+      local function neotree_zc(state, close_all)
+        local node = state.tree:get_node()
+        if not node then
+          return
+        end
+
+        local max_depth
+        if not close_all then
+          max_depth = node:get_depth() - vim.v.count1
+          if node:has_children() and node:is_expanded() then
+            max_depth = max_depth + 1
+          end
+        end
+
+        local last = recursive_close(state, node, max_depth)
+        renderer.redraw(state)
+        renderer.focus_node(state, last:get_id())
+      end
+
+      -- Close all containing folders back to the top level.
+      local function neotree_zC(state)
+        neotree_zc(state, true)
+      end
+
       require("neo-tree").setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
@@ -180,7 +226,7 @@ return {
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
-            ["Z"] = "close_all_nodes",
+            ["Z"] = neotree_zc,
             -- ["Z"] = "expand_all_nodes",
             ["z"] = neotree_zO,
             ["a"] = {
