@@ -68,3 +68,5 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Tell nvim we have nerd fonts installed
+vim.g.have_nerd_font = true
