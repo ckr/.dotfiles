@@ -32,6 +32,8 @@ return {
           "dockerfile",
           "gitignore",
           "ssh_config",
+          "terraform",
+          "tmux",
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
@@ -42,3 +44,4 @@ return {
     end,
   },
 }
+
