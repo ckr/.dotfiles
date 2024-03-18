@@ -147,6 +147,7 @@ return {
         dockerls = {},
         intelephense = {},
         puppet = {},
+        terraformls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
