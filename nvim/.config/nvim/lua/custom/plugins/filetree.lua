@@ -10,7 +10,7 @@ return {
       "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     keys = {
-      { "<leader>e", ":Neotree toggle<CR>" },
+      { "<leader>e", ":Neotree toggle<CR>", desc = "Neotree toggle" },
     },
     config = function()
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
@@ -285,7 +285,7 @@ return {
             },
           },
           follow_current_file = {
-            enabled = false, -- This will find and focus the file in the active buffer every time
+            enabled = true, -- This will find and focus the file in the active buffer every time
             --               -- the current file is changed while the tree is open.
             leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           },
