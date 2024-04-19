@@ -12,11 +12,11 @@
   autocrlf = input
   excludesfile = ~/.gitignore_global
   editor = vim
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta 
 [init]
   defaultBranch = main
 [interactive]
-  diffFilter = diff-so-fancy --patch
+  diffFilter = delta --color-only
 [color]
   ui = auto
 [push]
@@ -24,10 +24,18 @@
   autoSetupRemote = true
 [branch]
   autosetuprebase = always
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  side-by-side = true
+
+  # delta detects terminal colors automatically; set one of these to disable auto-detection
+  # dark = true
+  # light = true
 [credential]
   helper = osxkeychain
 [merge]
   tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
   prompt = true
 [mergetool "vimdiff"]
@@ -36,6 +44,7 @@
   prompt = false
 [diff]
   tool = vimdiff
+  colorMoved = default
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
