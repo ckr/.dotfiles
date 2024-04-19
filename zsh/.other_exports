@@ -17,7 +17,7 @@ export HISTSIZE=10000
 #shopt -s histappend
 
 #Bat theme
-export BAT_THEME="Coldark-Dark"
+export BAT_THEME="Catppuccin Mocha"
 
 #1password ssh agent
 export SSH_AUTH_SOCK=~/.1password/agent.sock

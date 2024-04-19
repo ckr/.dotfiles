@@ -104,8 +104,10 @@ fi
 # Spaceship theme settings
 [ -f ~/.spaceship.conf ] && source ~/.spaceship.conf
 
-# load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+if type "fzf" > /dev/null; then
+    eval "$(fzf --zsh)"
+fi
 
 # source plugins and add commands to the PATH
 zplug load
