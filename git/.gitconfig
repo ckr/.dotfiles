@@ -54,13 +54,27 @@
   insteadOf = "gh:"
   pushInsteadOf = "gh:"
 [alias]
-  info = remote -v
-  cb = "! git-clone-bare-for-worktrees.sh"
+  f = fetch
   w = worktree
+  b = branch
+  # h = head
+  h = !git head
+  # r = recent commits, only current branch
+  r = !GIT_NO_PAGER=1 git l -30
+  # l = all commits, only current branch
+  l = "!. ~/.githelpers && pretty_git_log"
+
+  fsb = "!. ~/.githelpers && fsb"
+  info = remote -v
+
+  cb = "! git-clone-bare-for-worktrees.sh"
+  
   wa = "!. ~/.githelpers && worktree_add"
   wl = worktree list
   wr = worktree remove
+  
   ls = ls-files
+  
   st = status
   ci = commit --verbose
   co = checkout
@@ -68,13 +82,15 @@
   dc = diff --cached
   amend = commit --amend
   aa = add --all
+  
   ff = merge --ff-only
+  fp = fetch -p
   pullff = pull --ff-only
   noff = merge --no-ff
   fa = fetch --all
   pom = push origin main
   pod = push origin develop
-  b = branch
+  
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
   revision = describe --tags --always HEAD
@@ -89,28 +105,25 @@
   bsa = "! git-branch-status -a"
   leaks = "! gitleaks detect -f sarif -s . -v --no-git --redact"
 
-    # Divergence (commits we added and commits remote added)
+  # Divergence (commits we added and commits remote added)
   div = "!. git-divergence"
 
-    # Goodness (summary of diff lines added/removed/total)
+  # Goodness (summary of diff lines added/removed/total)
   gn = "! git-goodness"
   gnc = "! git-goodness --cached"
 
-    # What the hell just happened and who has done it scripts
+  # What the hell just happened and who has done it scripts
   what-the-hell-just-happened = "! git-what-the-hell-just-happened"
   whodoneit = "! git-whodoneit"
 
-    # Fancy logging.
+  # Fancy logging.
   head = !git r -1
-    # h = head
-  h = !git head
-    # hp = head with patch
+  
+  # hp = head with patch
   hp = "!. ~/.githelpers && show_git_head"
-    # r = recent commits, only current branch
-  r = !GIT_NO_PAGER=1 git l -30
-    # ra = recent commits, all reachable refs
+  
+  # ra = recent commits, all reachable refs
   ra = !git r --all
-    # l = all commits, only current branch
-  l = "!. ~/.githelpers && pretty_git_log"
-    # la = all commits, all reachable refs
+  
+  # la = all commits, all reachable refs
   la = !git l --all
