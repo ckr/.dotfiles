@@ -12,6 +12,9 @@ export ZPLUG_HOME="$HOMEBREW_PREFIX/opt/zplug"
 
 #history
 export HISTFILE=~/.zsh_history # Where it gets saved
+# Erase duplicates in history
+export HISTCONTROL=erasedups
+# Store 10k history entries
 export HISTSIZE=10000
 export SAVEHIST=10000
 # Don't overwrite, append!
@@ -59,8 +62,8 @@ zplug "zsh-users/zsh-history-substring-search"
 # rebind keys to use zsh-history-substring-search
 if zplug check "zsh-users/zsh-history-substring-search"; then
 	zmodload zsh/terminfo
-	bindkey "$terminfo[cuu1]" history-substring-search-up
-	bindkey "$terminfo[cud1]" history-substring-search-down
+	bindkey "^[[A" history-substring-search-up
+	bindkey "^[[B" history-substring-search-down
 fi
 
 zplug "djui/alias-tips"
