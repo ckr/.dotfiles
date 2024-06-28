@@ -42,7 +42,7 @@ setopt HIST_IGNORE_SPACE
 
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, if:"[ \"$TERM_PROGRAM\" != \"Apple_Terminal\" ]"
 
 zplug "zsh-users/zsh-autosuggestions", defer:2
 if zplug check "zsh-users/zsh-autosuggestions"; then
