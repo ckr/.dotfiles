@@ -2,12 +2,10 @@
 
 # Unbreak broken, non-colored terminal
 alias ls='ls -G'
-alias ll='ls -lG'
 
 #common stuff
 alias vi="nvim"
 alias vim="nvim"
-alias ll="ls -al"
 alias du="du -kh"
 alias ..="cd ..;"
 alias ...="cd ..;"
@@ -18,6 +16,14 @@ alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
 alias cat="bat"
 alias sslscan-simple='sslscan --no-cipher-details --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation'
+
+# Eza
+alias ll="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+
+# Network testing
+# test udp connection
+alias ncudp='nc -vv -u -c'
 
 #ssh via cloudflare access
 alias ssh-cf='ssh -o ProxyCommand="cloudflared access ssh --hostname %h"'
