@@ -8,3 +8,15 @@ charset = utf-8
 [*.yml,*.yaml]
 indent_style = space
 indent_size = 2
+
+# Typescript files
+[*.ts]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+# ALL files
+[*]
+indent_style = space
+indent_size = 2
+tab_width = 2
