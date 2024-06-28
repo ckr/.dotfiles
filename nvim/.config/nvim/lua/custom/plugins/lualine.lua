@@ -12,7 +12,11 @@ return {
       -- configure lualine with modified theme
       lualine.setup({
         options = {
+          icons_enabled = true,
           theme = "catppuccin",
+        },
+        sections = {
+          lualine_c = { "buffers" },
         },
       })
     end,
