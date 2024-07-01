@@ -42,7 +42,7 @@ setopt HIST_IGNORE_SPACE
 
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, if:"[ \"$TERM_PROGRAM\" != \"Apple_Terminal\" ]"
+# zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, if:"[ \"$TERM_PROGRAM\" != \"Apple_Terminal\" ]"
 
 zplug "zsh-users/zsh-autosuggestions", defer:2
 if zplug check "zsh-users/zsh-autosuggestions"; then
@@ -123,3 +123,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # 1Password CLI Shell completion
 eval "$(op completion zsh)"; compdef _op op
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_mocha.toml)"
+fi

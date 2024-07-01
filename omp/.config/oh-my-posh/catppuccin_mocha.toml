@@ -1,0 +1,124 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'os'
+    style = 'plain'
+    foreground = 'p:os'
+    template = '{{.Icon}} '
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    foreground = 'p:pink'
+    template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+      folder_icon = '....'
+      home_icon = '~'
+      style = 'agnoster_short'
+      max_depth = 2
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:lavender'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_status = true 
+      fetch_upstream_icon = true
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = "aws"
+    style = "plain"
+    foreground = "p:lavender"
+    template = " {{.Profile}}{{if .Region}}@{{.Region}}{{end}} "
+
+  [[blocks.segments]]
+    type = "kubectl"
+    style = "plain"
+    foreground = "p:lavender"
+    template = "ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+
+  [[blocks.segments]]
+    type = "node"
+    style = "plain"
+    foreground = "p:lavender"
+    template = " "
+
+  [[blocks.segments]]
+    type = "npm"
+    style = "plain"
+    foreground = "p:lavender"
+    template = "  "
+
+  [[blocks.segments]]
+    type = "php"
+    style = "plain"
+    foreground = "p:lavender"
+    template = " "
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}p:pink{{end}}",
+      "{{if eq .Code 0}}p:blue{{end}}",
+    ]
+    background = 'transparent'
+    template = '󰜎 ❯'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}p:pink{{end}}",
+    "{{if eq .Code 0}}p:blue{{end}}",
+  ]
+  background = 'transparent'
+  template = '󰜎 ❯ '
+
+[secondary_prompt]
+  foreground = 'p:blue'
+  background = 'transparent'
+  template = '❯❯ '
+
+[palette]
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
