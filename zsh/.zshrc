@@ -122,8 +122,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # 1Password CLI Shell completion
-eval "$(op completion zsh)"; compdef _op op
+if type "op" > /dev/null; then
+  eval "$(op completion zsh)"; compdef _op op
+fi
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_mocha.toml)"
+  if type "oh-my-posh" > /dev/null; then
+    eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_mocha.toml)"
+  fi
 fi
+
