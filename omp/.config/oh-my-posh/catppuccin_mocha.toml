@@ -16,6 +16,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     template = '{{.Icon}} '
 
   [[blocks.segments]]
+    type = "session"
+    style = "plain"
+    foreground = "p:os"
+    template = "{{ if .SSHSession }} {{ end }} "
+
+  [[blocks.segments]]
     type = 'path'
     style = 'plain'
     foreground = 'p:pink'
