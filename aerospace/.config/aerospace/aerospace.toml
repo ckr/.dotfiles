@@ -187,5 +187,9 @@ alt-shift-l = ['join-with right', 'mode main']
 # run = "move-node-to-workspace B"
 
 [[on-window-detected]]
+if.app-id = 'com.rdbrck.shift'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'us.zoom.xos'
 run = 'layout floating'
