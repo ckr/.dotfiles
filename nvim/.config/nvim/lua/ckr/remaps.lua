@@ -27,6 +27,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
+-- Increment/decrement
+vim.keymap.set("n", "+", "<C-a>", { desc = "Increment numbers", noremap = true })
+vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement numbers", noremap = true })
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
