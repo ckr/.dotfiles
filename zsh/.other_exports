@@ -19,5 +19,8 @@ export HISTSIZE=10000
 #Bat theme
 export BAT_THEME="Catppuccin Mocha"
 
+# Add XDG_CONFIG_HOME
+export XDG_CONFIG_HOME="$HOME/.config"
+
 #1password ssh agent
 export SSH_AUTH_SOCK=~/.1password/agent.sock
