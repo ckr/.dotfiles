@@ -13,8 +13,9 @@ import = [
   opacity = 0.90
   decorations_theme_variant = "Dark"
   # decorations = "Transparent"
+  decorations = "Buttonless"
   blur = true 
-  padding = { x = 1, y = 1 }
+  padding = { x = 5, y = 5 }
   dynamic_padding = true
 [keyboard]
   bindings = [
