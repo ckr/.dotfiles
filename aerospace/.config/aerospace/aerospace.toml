@@ -63,7 +63,7 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        10
+outer.top =        [{ monitor."LG ULTRAWIDE" = 40 }, 10]
 outer.right =      10
 
 # 'main' binding mode declaration
@@ -88,7 +88,6 @@ outer.right =      10
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
@@ -193,12 +192,24 @@ alt-shift-l = ['join-with right', 'mode main']
 # if.app-id = 'com.google.Chrome'
 # run = "move-node-to-workspace B"
 
-[[on-window-detected]]
-if.app-id = 'com.rdbrck.shift'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.rdbrck.shift'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+# [[on-window-detected]]
+# if.app-id = 'com.tinyspeck.slackmacgap'
+# run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.sequel-ace.sequel-ace'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -206,6 +217,5 @@ if.app-id = 'com.dmitrynikolaev.numi'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
+if.app-id = 'cc.ffitch.shottr'
 run = 'layout floating'
-
