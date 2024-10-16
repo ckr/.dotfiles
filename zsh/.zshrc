@@ -132,3 +132,9 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   fi
 fi
 
+# atuin
+if type "atuin" > /dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)";
+fi
+
+
