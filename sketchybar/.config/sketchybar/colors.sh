@@ -28,7 +28,7 @@ export BACKGROUND_1=$BG1
 export BACKGROUND_2=$BG2
 export ICON_COLOR=$WHITE # Color of all icons
 export LABEL_COLOR=$WHITE # Color of all labels
-export POPUP_BACKGROUND_COLOR=$BAR_COLOR
+export POPUP_BACKGROUND_COLOR=$BG0
 export POPUP_BORDER_COLOR=$WHITE
 export SHADOW_COLOR=$BLACK
 

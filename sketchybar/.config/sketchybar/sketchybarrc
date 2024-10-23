@@ -70,7 +70,6 @@ defaults=(
   popup.blur_radius=20
   popup.background.shadow.drawing=on
   scroll_texts=on
-
 )
 
 sketchybar --default "${defaults[@]}"
@@ -87,7 +86,9 @@ source "$ITEM_DIR/input_source.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/gp.sh"
+source "$ITEM_DIR/email.sh"
+# source "$ITEM_DIR/slack.sh"
+# source "$ITEM_DIR/gp.sh"
 source "$ITEM_DIR/meeter.sh"
 source "$ITEM_DIR/aerospace.sh"
 

@@ -8,6 +8,7 @@ apple_logo=(
   icon.font="$FONT:Black:16.0"
   icon.color=$WHITE
   padding_right=15
+  padding_left=15
   label.drawing=off
   click_script="$POPUP_CLICK_SCRIPT"
   popup.height=35
@@ -16,18 +17,24 @@ apple_logo=(
 apple_prefs=(
   icon=$PREFERENCES
   label="Preferences"
+  background.padding_left=15
+  background.padding_right=15
   click_script="open -a 'System Preferences'; $POPUP_OFF"
 )
 
 apple_activity=(
   icon=$ACTIVITY
   label="Activity"
+  background.padding_left=15
+  background.padding_right=15
   click_script="open -a 'Activity Monitor'; $POPUP_OFF"
 )
 
 apple_lock=(
   icon=$LOCK
   label="Lock Screen"
+  background.padding_left=15
+  background.padding_right=15
   click_script="pmset displaysleepnow; $POPUP_OFF"
 )
 
