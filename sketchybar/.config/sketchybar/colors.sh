@@ -22,8 +22,8 @@ export BATTERY_4=0xffee99a0
 export BATTERY_5=0xffed8796
 
 # General bar colors
-export BAR_COLOR=$BG0
-export BAR_BORDER_COLOR=$BG2
+export BAR_COLOR=$TRANSPARENT
+export BAR_BORDER_COLOR=$TRANSPARENT
 export BACKGROUND_1=$BG1
 export BACKGROUND_2=$BG2
 export ICON_COLOR=$WHITE # Color of all icons
