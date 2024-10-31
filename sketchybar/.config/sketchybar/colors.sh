@@ -5,6 +5,7 @@ export BLACK=0xff181926
 export WHITE=0xffcad3f5
 export PUREWHITE=0xffffffff
 export RED=0xffed8796
+export CYAN=0xe0689d6a
 export GREEN=0xffa6da95
 export BLUE=0xff8aadf4
 export YELLOW=0xffeed49f
