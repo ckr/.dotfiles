@@ -27,7 +27,7 @@ AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=$(aerospace list-windows --workspac
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=45
+  height=40
   color=$BAR_COLOR
   border_width=5
   border_color=$BAR_BORDER_COLOR
@@ -37,7 +37,7 @@ bar=(
   sticky=on
   padding_right=10
   padding_left=10
-  y_offset=-5
+  y_offset=-3
   margin=-2
   topmost=window
 )
