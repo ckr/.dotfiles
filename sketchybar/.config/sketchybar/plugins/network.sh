@@ -12,15 +12,15 @@ if [[ $IS_VPN != "" ]]; then
 	ICON=$VPN
 elif [[ $IP_ADDRESS != "" ]]; then
   if [[ $IS_WIFI != "" ]]; then
-    COLOR=$BLUE
-    ICON=$WIFI_CONNECTED
+    COLOR=$WHITE
+    ICON=$WIFI_ON
   else
-    COLOR=$BLUE
+    COLOR=$WHITE
     ICON=$ETH
   fi
 else
-	COLOR=$WHITE
-	ICON=
+	COLOR=$RED
+	ICON=$WIFI_OFF
 fi
 
 sketchybar --set $NAME icon=$ICON label="" icon.color=$COLOR 
