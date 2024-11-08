@@ -34,7 +34,11 @@ esac
 
 if [[ "$CHARGING" != "" ]]; then
   ICON="􀢋"
-  ICON_COLOR=$YELLOW
+  if [[ "$PERCENTAGE" = "100" ]]; then
+    ICON_COLOR=$BATTERY_1
+  else
+    ICON_COLOR=$YELLOW
+  fi
 fi
 
 # The item invoking this script (name $NAME) will get its icon and label
