@@ -10,8 +10,11 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Mocha"
 
 config.font_size = 12
-config.font = wezterm.font("MesloLGM Nerd Font", { weight = "Medium" })
-config.font = wezterm.font_with_fallback({ "JetBrains Mono" })
+-- config.font = wezterm.font("MesloLGM Nerd Font")
+config.font = wezterm.font_with_fallback({
+  { family = "MesloLGM Nerd Font", weight = "Regular" },
+  "JetBrains Mono",
+})
 
 config.enable_tab_bar = false
 config.macos_window_background_blur = 30
