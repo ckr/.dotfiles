@@ -5,7 +5,7 @@
 
 ip_address_info=(
   script="$PLUGIN_DIR/network.sh"
-  update_feq=30
+  update_freq=30
   icon.font.size=20
 )
 
