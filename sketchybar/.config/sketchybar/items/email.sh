@@ -2,7 +2,7 @@
 
 email_logo=(
   update_freq=60
-  # background.padding_left=15
+  background.padding_left=5
   icon.font.size=20
   script="$PLUGIN_DIR/email.sh"
 )
