@@ -1,11 +1,17 @@
 #!/bin/bash
 
+# Colors
+white='0xffe1e3e4'
+black='0xff494d64'
+red="0xfff7768e"
+blue="0xff7aa2f7"
+
 options=(
 	style=round
-	width=5.0
-	hidpi=off
-	active_color=0xffe1e3e4
-	inactive_color=0xff494d64
+	width=6.0
+	hidpi=on
+	active_color="$red"
+	inactive_color="$blue"
 )
 
 borders "${options[@]}"

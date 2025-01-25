@@ -67,12 +67,14 @@ outer.bottom =     10
 outer.top =        [
   { monitor.main = 45 },
   { monitor.bult-in = 15 },
-  # { monitor."LG ULTRAWIDE" = 45 },
-  # { monitor."PHL 346B1C" = 45 },
-  # { monitor."BenQ EW3270U" = 45 },
   15,
 ]
 outer.right =      10
+
+[workspace-to-monitor-force-assignment]
+7 = ['secondary', 'main']
+8 = ['secondary', 'main']
+9 = ['secondary', 'main']
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -228,3 +230,8 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'cc.ffitch.shottr'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'layout floating'
+
