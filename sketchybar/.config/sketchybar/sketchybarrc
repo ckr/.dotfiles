@@ -89,6 +89,7 @@ source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/email.sh"
 # source "$ITEM_DIR/slack.sh"
 source "$ITEM_DIR/meeter.sh"
+source "$ITEM_DIR/media.sh"
 source "$ITEM_DIR/aerospace.sh"
 
 app_groups=(
