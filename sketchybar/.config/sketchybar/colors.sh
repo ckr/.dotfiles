@@ -17,6 +17,7 @@ export BG0TR50=0xa81e1e2e
 export BG0=0xff1e1e2e
 export BG1=0x603c3e4f
 export BG2=0x60494d64
+export BG3=0xab494d64
 
 export BATTERY_1=0xffa6da95
 export BATTERY_2=0xffeed49f
@@ -28,7 +29,7 @@ export BATTERY_5=0xffed8796
 export BAR_COLOR=$BG0TR50
 export BAR_BORDER_COLOR=$TRANSPARENT
 export BACKGROUND_1=$BG1
-export BACKGROUND_2=$BG2
+export BACKGROUND_2=$BG3
 export ICON_COLOR=$WHITE # Color of all icons
 export LABEL_COLOR=$WHITE # Color of all labels
 export POPUP_BACKGROUND_COLOR=$BG0
