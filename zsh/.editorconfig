@@ -3,6 +3,14 @@ root = true
 
 # All files should be in utf-8
 charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# ALL files
+[*]
+indent_style = space
+indent_size = 2
+tab_width = 2
 
 # YAML files
 [*.yml,*.yaml]
@@ -15,8 +23,8 @@ indent_style = space
 indent_size = 2
 tab_width = 2
 
-# ALL files
-[*]
+# PHP files
+[*.php]
 indent_style = space
-indent_size = 2
-tab_width = 2
+indent_size = 4
+tab_width = 4
