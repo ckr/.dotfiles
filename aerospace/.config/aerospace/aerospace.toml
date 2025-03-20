@@ -153,6 +153,23 @@ alt-shift-p = ['move-node-to-workspace P', 'workspace P']
 alt-shift-t = ['move-node-to-workspace T', 'workspace T']
 alt-shift-v = ['move-node-to-workspace V', 'workspace V']
 
+alt-shift-cmd-1 = ['move-node-to-workspace 1']
+alt-shift-cmd-2 = ['move-node-to-workspace 2']
+alt-shift-cmd-3 = ['move-node-to-workspace 3']
+alt-shift-cmd-4 = ['move-node-to-workspace 4']
+alt-shift-cmd-5 = ['move-node-to-workspace 5']
+alt-shift-cmd-6 = ['move-node-to-workspace 6']
+alt-shift-cmd-7 = ['move-node-to-workspace 7']
+alt-shift-cmd-8 = ['move-node-to-workspace 8']
+alt-shift-cmd-9 = ['move-node-to-workspace 9']
+alt-shift-cmd-b = ['move-node-to-workspace B']
+alt-shift-cmd-e = ['move-node-to-workspace E']
+alt-shift-cmd-m = ['move-node-to-workspace M']
+alt-shift-cmd-n = ['move-node-to-workspace N']
+alt-shift-cmd-p = ['move-node-to-workspace P']
+alt-shift-cmd-t = ['move-node-to-workspace T']
+alt-shift-cmd-v = ['move-node-to-workspace V']
+
 alt-shift-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -234,4 +251,3 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = 'layout floating'
-
