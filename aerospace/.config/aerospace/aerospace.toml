@@ -251,3 +251,7 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.TV'
+run = 'layout floating'
