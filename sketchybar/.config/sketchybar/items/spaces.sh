@@ -7,7 +7,12 @@
 
 sketchybar --add event aerospace_workspace_change
 
-for m in $(aerospace list-monitors | awk '{print $1}'); do
+declare -A monitors
+while IFS=" " read -r monitor_id display_id; do
+  monitors["$monitor_id"]="$display_id"
+done < <(aerospace list-monitors --format '%{monitor-id} %{monitor-appkit-nsscreen-screens-id}')
+
+for m in "${monitors[@]}"; do
   for i in $(aerospace list-workspaces --monitor $m); do
     sid=$i
     space=(
@@ -16,9 +21,10 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       icon.highlight_color=$RED
       icon.padding_left=10
       icon.padding_right=10
-      display=$m
+      display="${monitors[$m]}"
       padding_left=2
       padding_right=2
+      label="$sid"
       label.padding_right=20
       label.color=$GREY
       label.highlight_color=$WHITE
@@ -51,7 +57,6 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m --empty); do
     sketchybar --set space.$i display=0
   done
-  
 done
 
 
@@ -69,4 +74,3 @@ space_creator=(
 sketchybar --add item space_creator left               \
            --set space_creator "${space_creator[@]}"   \
            --subscribe space_creator aerospace_workspace_change
-

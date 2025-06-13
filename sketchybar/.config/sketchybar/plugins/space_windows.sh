@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
- 
+
 source "$CONFIG_DIR/colors.sh"
 
-AEROSPACE_FOCUSED_MONITOR=$(aerospace list-monitors --focused | awk '{print $1}')
+AEROSPACE_FOCUSED_MONITOR=$(aerospace list-monitors --focused --format '%{monitor-appkit-nsscreen-screens-id}')
 AEROSAPCE_WORKSPACE_FOCUSED_MONITOR=$(aerospace list-workspaces --monitor focused --empty no)
 AEROSPACE_EMPTY_WORKESPACE=$(aerospace list-workspaces --monitor focused --empty)
 
@@ -37,7 +37,7 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
                          label.highlight=false \
                          background.border_color=$BACKGROUND_2
 
-  # focused 
+  # focused
   for i in $AEROSAPCE_WORKSPACE_FOCUSED_MONITOR; do
     sketchybar --set space.$i display=$AEROSPACE_FOCUSED_MONITOR
   done
