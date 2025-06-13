@@ -67,6 +67,7 @@ outer.bottom =     10
 outer.top =        [
   { monitor.bult-in = 10 },
   { monitor.main = 45 },
+  { monitor.secondary = 45 },
   10,
 ]
 outer.right =      10
