@@ -8,9 +8,9 @@ PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are st
 
 # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 FONT="SF Pro"
-# FONT="MesloLGM Nerd Font" 
+# FONT="MesloLGM Nerd Font"
 # All paddings use this value (icon, label, background)
-PADDINGS=3 
+PADDINGS=3
 
 # aerospace setting
 AEROSPACE_FOCUSED_MONITOR_NO=$(aerospace list-workspaces --focused)
@@ -88,7 +88,8 @@ source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/email.sh"
 # source "$ITEM_DIR/slack.sh"
-source "$ITEM_DIR/meeter.sh"
+# source "$ITEM_DIR/meeter.sh"
+source "$ITEM_DIR/meetings.sh"
 source "$ITEM_DIR/media.sh"
 source "$ITEM_DIR/aerospace.sh"
 
@@ -99,8 +100,8 @@ app_groups=(
   background.padding_right=5
 )
 
-sketchybar --add bracket apps_group1 email ip_address battery volume volume_icon \
-           --set apps_group1 "${app_groups[@]}" 
+sketchybar --add bracket apps_group1 meetings email ip_address battery volume volume_icon \
+           --set apps_group1 "${app_groups[@]}"
 
 sketchybar --hotload on
 
