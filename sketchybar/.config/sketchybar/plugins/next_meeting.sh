@@ -100,14 +100,14 @@ fmt_diff() {
 
   if (( hours > 0 )); then
     if (( mins > 0 )); then
-      printf "in %dh%dm" "$hours" "$mins"
+      printf "%dh%dm" "$hours" "$mins"
     else
-      printf "in %dh" "$hours"
+      printf "%dh" "$hours"
     fi
   elif (( mins > 0 )); then
-    printf "in %dm" "$mins"
+    printf "%dm" "$mins"
   else
-    printf "in %ds" "$secs"
+    printf "%ds" "$secs"
   fi
 }
 
@@ -128,7 +128,7 @@ fi
 # Upcoming later today: show "Xm" / "1h5m"
 if [ "$start_local" = "$today_local" ] && [ "$start_epoch" -gt "$now_epoch" ]; then
   diff=$(( start_epoch - now_epoch ))
-  label="$(fmt_diff "$diff")"
+  label="in $(fmt_diff "$diff")"
 
   color="$COLOR_NORMAL"
   if   (( diff <= 300 ));  then color="$COLOR_URGENT"
