@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+source "colors.sh"
+
 # SketchyBar provides $NAME (item name) automatically
 ITEM="${NAME:-meetings}"
 
@@ -10,18 +12,18 @@ SHORTCUT_NAME="${SHORTCUT_NAME:-Get Next Meeting}"
 ICON="${ICON:-󰃰}"
 
 # Colors (ARGB)
-COLOR_LABEL_NORMAL="0xffc0caf5"  # blue-ish
-COLOR_LABEL_SOON="0xffe5c07b"    # amber (<= 15m)
-COLOR_LABEL_URGENT="0xffe06c75"  # red   (<= 5m)
-COLOR_LABEL_ACTIVE="0xff98c379"  # green
-COLOR_ICON_DEFAULT="0xffc0caf5"
+COLOR_NORMAL="$LABEL_COLOR" #0xffc0caf5"  # blue-ish
+COLOR_SOON="$ORANGE" #0xffe5c07b"    # amber (<= 15m)
+COLOR_URGENT="$RED" #0xffe06c75"  # red   (<= 5m)
+COLOR_ACTIVE="$GREEN" #0xff98c379"  # green
+COLOR_ICON_DEFAULT="$ICON_COLOR" # "0xffc0caf5"
 
 icon_only() {
   # Show only the icon (no label)
   sketchybar --set "$ITEM" \
     drawing=on \
     icon="$ICON" \
-    icon.color="$COLOR_ICON_DEFAULT" \
+    icon.color="$COLOR_NORMAL" \
     label="" \
     label.drawing=off
   exit 0
@@ -116,10 +118,10 @@ if $ongoing; then
   sketchybar --set "$ITEM" \
     drawing=on \
     icon="$ICON" \
-    icon.color="$COLOR_ICON_DEFAULT" \
+    icon.color="$COLOR_ACTIVE" \
     label="$label" \
     label.drawing=on \
-    label.color="$COLOR_LABEL_ACTIVE"
+    label.color="$COLOR_ACTIVE"
   exit 0
 fi
 
@@ -128,15 +130,15 @@ if [ "$start_local" = "$today_local" ] && [ "$start_epoch" -gt "$now_epoch" ]; t
   diff=$(( start_epoch - now_epoch ))
   label="$(fmt_diff "$diff")"
 
-  color="$COLOR_LABEL_NORMAL"
-  if   (( diff <= 300 ));  then color="$COLOR_LABEL_URGENT"
-  elif (( diff <= 900 ));  then color="$COLOR_LABEL_SOON"
+  color="$COLOR_NORMAL"
+  if   (( diff <= 300 ));  then color="$COLOR_URGENT"
+  elif (( diff <= 900 ));  then color="$COLOR_SOON"
   fi
 
   sketchybar --set "$ITEM" \
     drawing=on \
     icon="$ICON" \
-    icon.color="$COLOR_ICON_DEFAULT" \
+    icon.color="$color" \
     label="$label" \
     label.drawing=on \
     label.color="$color"
