@@ -88,10 +88,9 @@ source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/email.sh"
 # source "$ITEM_DIR/slack.sh"
-# source "$ITEM_DIR/meeter.sh"
 source "$ITEM_DIR/meetings.sh"
+source "$ITEM_DIR/aerospace_ws.sh"
 source "$ITEM_DIR/media.sh"
-source "$ITEM_DIR/aerospace.sh"
 
 app_groups=(
   background.color=$BACKGROUND_1
@@ -100,7 +99,7 @@ app_groups=(
   background.padding_right=5
 )
 
-sketchybar --add bracket apps_group1 meetings email ip_address battery volume volume_icon \
+sketchybar --add bracket apps_group1 maerospace_ws meetings email ip_address battery volume volume_icon \
            --set apps_group1 "${app_groups[@]}"
 
 sketchybar --hotload on
