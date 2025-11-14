@@ -114,7 +114,11 @@ fmt_diff() {
 # Ongoing: show "Xm ago"
 if $ongoing; then
   diff=$(( now_epoch - start_epoch ))
+  ldiff=$(( end_epoch - now_epoch ))
   label="$(fmt_diff "$diff") ago"
+  if [ "$diff" -gt "600" ]; then
+    label="$(fmt_diff "$ldiff") left"
+  fi
   sketchybar --set "$ITEM" \
     drawing=on \
     icon="$ICON" \
