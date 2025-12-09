@@ -12,7 +12,7 @@
   autocrlf = input
   excludesfile = ~/.gitignore_global
   editor = vim
-  pager = delta 
+  pager = delta
 [init]
   defaultBranch = main
 [interactive]
@@ -24,7 +24,10 @@
   autoSetupRemote = true
 [branch]
   autosetuprebase = always
+[include]
+  path = ~/.config/delta/catppuccin.gitconfig
 [delta]
+  features = catppuccin-mocha
   navigate = true    # use n and N to move between diff sections
   side-by-side = true
 
@@ -68,13 +71,13 @@
   info = remote -v
 
   cb = "! git-clone-bare-for-worktrees.sh"
-  
+
   wa = "!. ~/.githelpers && worktree_add"
   wl = worktree list
   wr = worktree remove
-  
+
   ls = ls-files
-  
+
   st = status
   ci = commit --verbose
   co = checkout
@@ -82,7 +85,7 @@
   dc = diff --cached
   amend = commit --amend
   aa = add --all
-  
+
   ff = merge --ff-only
   fp = fetch -p
   pullff = pull --ff-only
@@ -90,7 +93,7 @@
   fa = fetch --all
   pom = push origin main
   pod = push origin develop
-  
+
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
   revision = describe --tags --always HEAD
@@ -118,12 +121,12 @@
 
   # Fancy logging.
   head = !git r -1
-  
+
   # hp = head with patch
   hp = "!. ~/.githelpers && show_git_head"
-  
+
   # ra = recent commits, all reachable refs
   ra = !git r --all
-  
+
   # la = all commits, all reachable refs
   la = !git l --all
