@@ -16,6 +16,7 @@ alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
 alias cat="bat"
 alias sslscan-simple='sslscan --no-cipher-details --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation'
+# alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Eza
 alias ll="eza -l --icons --git -a"
