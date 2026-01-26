@@ -21,3 +21,7 @@ window-padding-y = 5
 # Key bindings
 # keybind = global:cmd+/=toggle_quick_terminal
 
+
+# try and fix colors over ssh
+term = xterm-256color
+shell-integration-features = ssh-terminfo,ssh-env
