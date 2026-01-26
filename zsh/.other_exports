@@ -24,3 +24,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 #1password ssh agent
 export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+#fix for gpg sign
+export GPG_TTY=$(tty)
