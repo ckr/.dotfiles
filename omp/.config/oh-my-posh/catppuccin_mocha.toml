@@ -123,6 +123,17 @@ final_space = true
       cache_duration = 'none'
 
   [[blocks.segments]]
+    template = " {{ .Full }}{{ if .Env.VIRTUAL_ENV }} ({{ regexReplaceAll \".*/\" .Env.VIRTUAL_ENV \"\" }}){{ end }} "  
+    foreground = "#89b4fa"
+    type = "python"
+    style = "plain"
+    
+    [blocks.segments.properties]
+      fetch_virtual_env = true
+      fetch_version = true
+      display_mode = "context"
+
+  [[blocks.segments]]
     template = '{{ .FormattedMs }}'
     foreground = 'yellow'
     background = 'transparent'
