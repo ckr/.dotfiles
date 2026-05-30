@@ -2,18 +2,21 @@ return {
   {
     -- statusline
     "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "catppuccin/nvim",
+    },
     config = function()
-      -- import lualine plugin safely
-      local status, lualine = pcall(require, "lualine")
-      if not status then
+      local ok, lualine = pcall(require, "lualine")
+      if not ok then
         return
       end
 
-      -- configure lualine with modified theme
+      local catppuccin_ok, catppuccin_lualine = pcall(require, "catppuccin.utils.lualine")
+
       lualine.setup({
         options = {
           icons_enabled = true,
-          theme = "catppuccin",
+          theme = catppuccin_ok and catppuccin_lualine("mocha") or "auto",
         },
         sections = {
           lualine_c = { "buffers" },
