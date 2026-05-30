@@ -105,7 +105,10 @@ fi
 [ -f ~/.other_exports ] && source ~/.other_exports
 
 # Spaceship theme settings
-[ -f ~/.spaceship.conf ] && source ~/.spaceship.conf
+#[ -f ~/.spaceship.conf ] && source ~/.spaceship.conf
+
+# Opencode completion
+[ -f ~/.opencode_completion ] && source ~/.opencode_completion
 
 # Set up fzf key bindings and fuzzy completion
 if type "fzf" > /dev/null; then
@@ -141,3 +144,5 @@ fi
 if type "direnv" > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+. "$HOME/.local/bin/env"

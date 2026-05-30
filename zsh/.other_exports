@@ -27,3 +27,4 @@ export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 #fix for gpg sign
 export GPG_TTY=$(tty)
+
