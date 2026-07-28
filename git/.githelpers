@@ -31,6 +31,7 @@ SIGNED_COMMIT="%C(bold blue)%G?%Creset"
 
 FORMAT="$HASH}$SIGNED_COMMIT}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
 EXPORT_FORMAT="%h}%ar}%an}%s"
+CSV_EXPORT_FORMAT='"%h","%ar","%an","%s"'
 
 ANSI_BLACK='\033[30m'
 ANSI_BLACK_BOLD='\033[0;30;1m'
@@ -49,7 +50,6 @@ ANSI_CYAN_BOLD='\033[0;36;1m'
 ANSI_WHITE='\033[37m'
 ANSI_WHITE_BOLD='\033[0;37;1m'
 ANSI_RESET='\033[0m'
-
 
 rename_branch() {
     git branch -m $1 $2
@@ -91,6 +91,7 @@ export_git_log() {
         cat
 }
 
+
 export_git_log_audit() {
     echo '"Commit","When","Who","Message"'
     git log --pretty="tformat:${CSV_EXPORT_FORMAT}" $* |
@@ -115,14 +116,12 @@ worktree_add() {
 # Looks for local and remote branches
 fsb() {
     local pattern=$*
-    local branches branch
-    branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&
-    branch=$(echo "$branches" |
-        fzf-tmux -p --reverse -1 -0 +m) &&
+        local branches branch
+        branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&
+        branch=$(echo "$branches" |
+                fzf-tmux -p --reverse -1 -0 +m) &&
         if [ "$branch" = "" ]; then
             echo "[$0] No branch matches the provided pattern"; return;
-        fi;
-        echo "Checking out branch ${branch}..."
-        git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
-    }
-
+    fi;
+    git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+}
