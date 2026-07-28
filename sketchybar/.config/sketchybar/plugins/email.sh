@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-STATUS_LABEL=$(lsappinfo info -only StatusLabel "Shift")
+STATUS_LABEL=$(lsappinfo info -only StatusLabel --app com.rdbrck.shift)
 ICON="󰇮"
 
 if [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then

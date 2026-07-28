@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 #SPACE_ICONS=("1" "2" "3" "4")
 
@@ -7,7 +7,7 @@
 
 sketchybar --add event aerospace_workspace_change
 
-declare -A monitors
+declare -a monitors
 while IFS=" " read -r monitor_id display_id; do
   monitors["$monitor_id"]="$display_id"
 done < <(aerospace list-monitors --format '%{monitor-id} %{monitor-appkit-nsscreen-screens-id}')

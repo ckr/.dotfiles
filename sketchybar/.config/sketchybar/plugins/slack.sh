@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-STATUS_LABEL=$(lsappinfo info -only StatusLabel "Slack")
+STATUS_LABEL=$(lsappinfo info -only StatusLabel --app com.tinyspeck.slackmacgap)
 ICON="󰒱"
 
 if [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then

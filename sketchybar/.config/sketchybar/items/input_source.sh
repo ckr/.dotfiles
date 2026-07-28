@@ -11,6 +11,6 @@ input_source=(
   label.padding_right=10
 )
 
-sketchybar --add item input_source right \
-           --set input_source "${input_source[@]}"
+sketchybar --add item inputsource right \
+           --set inputsource "${input_source[@]}"
 

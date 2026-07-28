@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 slack_logo=(
-  update_freq=60
-  background.padding_left=5
+  update_freq=30
+  #background.padding_left=5
   icon.font.size=20
   script="$PLUGIN_DIR/slack.sh"
 )
