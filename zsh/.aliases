@@ -16,21 +16,15 @@ alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
 alias cat="bat"
 alias sslscan-simple='sslscan --no-cipher-details --no-ciphersuites --no-compression --no-fallback --no-groups --no-heartbleed --no-renegotiation'
-# alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Eza
+alias ls='eza --icons -G'
 alias ll="eza -l --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 
 # Network testing
 # test udp connection
 alias ncudp='nc -vv -u -c'
-
-#ssh via cloudflare access
-alias ssh-cf='ssh -o ProxyCommand="cloudflared access ssh --hostname %h"'
-
-# cluster ssh alias
-alias cssh="tmux-cssh"
 
 #fix nsupdate navigation
 alias nsupdate='rlwrap nsupdate'
@@ -60,3 +54,8 @@ alias kgpa='kubectl get pods --all-namespaces'
 
 # AWS Aliases
 alias aws-whoami='aws sts get-caller-identity'
+
+# gitleaks
+alias gl-reduct="gitleaks detect -f sarif -s . -v --no-git --redact"
+alias gl-default="gitleaks detect -f sarif -s . -v --no-git"
+alias gl="gitleaks"
