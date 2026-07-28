@@ -4,7 +4,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Set to true if you have a Nerd Font installed
+-- Tell nvim we have nerd fonts installed
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
