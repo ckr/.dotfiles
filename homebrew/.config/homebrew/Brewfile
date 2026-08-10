@@ -1,0 +1,91 @@
+# Personal Mac package inventory migrated from
+# mac-dev-playbook/home.config.yml.
+
+# Tap required by AeroSpace.
+tap "nikitabobko/tap"
+
+# Homebrew formulas
+brew "asciinema"
+brew "coreutils"
+brew "fabric"
+brew "gd"
+brew "gnupg"
+brew "htop"
+brew "kubernetes-cli"
+brew "mas"
+brew "pwgen"
+brew "pyenv"
+brew "python"
+brew "rlwrap"
+brew "socat"
+brew "sslscan"
+brew "tmux"
+brew "tree"
+brew "watch"
+brew "yarn"
+# npm is distributed with Node.js; the legacy profile listed npm separately.
+brew "node"
+brew "bat"
+brew "awscli"
+brew "neovim"
+brew "fzf"
+brew "ripgrep"
+brew "stow"
+brew "zplug"
+brew "lazygit"
+brew "ansible-lint"
+brew "yamllint"
+brew "hugo"
+brew "certbot"
+brew "git-delta"
+brew "tokei"
+brew "duf"
+brew "eza"
+brew "oh-my-posh"
+brew "otree"
+brew "fx"
+brew "direnv"
+brew "atuin"
+brew "felixkratz/formulae/borders"
+brew "btop"
+brew "lazydocker"
+brew "lua"
+brew "switchaudio-osx"
+brew "nowplaying-cli"
+brew "iftop"
+brew "asitop"
+brew "glow"
+brew "serpl"
+brew "yazi"
+brew "csvlens"
+
+# Homebrew casks
+cask "1password-cli"
+cask "burp-suite"
+cask "gpg-suite"
+cask "istat-menus"
+cask "ghostty"
+cask "spotify"
+cask "sublime-text"
+cask "visual-studio-code"
+cask "shottr"
+cask "whatsapp"
+cask "discord"
+cask "transmit"
+cask "git-credential-manager"
+cask "nikitabobko/tap/aerospace"
+cask "raycast"
+cask "hyperkey"
+
+# Mac App Store applications
+mas "Quiver", id: 866773894
+mas "Remote Desktop", id: 409907375
+mas "Messenger", id: 1480068668
+mas "Codye", id: 1516894961
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "EyeFriendly", id: 587769990
+mas "YubiKey Personalization Tool", id: 638161122
+mas "The Unarchiver", id: 425424353
+mas "Deliveries", id: 924726344
+mas "Pocket", id: 568494494
+mas "Meeter for Zoom, Teams & Co", id: 1510445899
