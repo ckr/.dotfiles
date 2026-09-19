@@ -77,3 +77,8 @@ x() {
 iterm2_print_user_vars() {
 	iterm2_set_user_var emojiBadge $EMOJI_BADGE
 }
+
+brew() {
+  HOMEBREW_GITHUB_API_TOKEN="$(op read 'op://Private/Github/brew_api_token')" \
+    command brew "$@"
+}
